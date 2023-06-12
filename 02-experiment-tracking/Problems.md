@@ -19,7 +19,7 @@
 
 ### Git
 1. `(modified content, untracked content)`
-
+    
     ***ANS:*** Jump to the target folder,  `rm -rf .git*`
 2. After ` git push origin main`, message as `git@github.com: Permission denied (publickey). 
   fatal: Could not read from remote repository.

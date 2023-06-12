@@ -21,6 +21,20 @@
 1. `(modified content, untracked content)`
     
     ***ANS:*** Jump to the target folder,  `rm -rf .git*`
+    
+    ***Similar:*** [Cancel tracking](https://thedevpost.com/blog/remove-files-or-folders-from-remote-git/)
+
+    ```
+    # Remove a file
+    git rm --cached readme1.txt // remove tracking but not phisically remove the file
+    git rm --f readme1.txt  //remove the file
+    ```
+    ```
+    # Remove a folder
+    git rm --cached -rf .idea  // remove tracking (under current folder )but not phisically remove the file
+    git rm --cached -rf **/.idea/   // remove the tracking (under each folder)
+    git rm -rf .idea/    // remove tracking but not phisically remove the file
+    ```
 
 2. After ` git push origin main`, message as `git@github.com: Permission denied (publickey). 
   fatal: Could not read from remote repository.
@@ -46,20 +60,71 @@
     
     ***ANS:*** `git ls-tree -r master --name-only`
 
-5. Do not want to update specific files
+5. Do not want to upload specific files(Cancel tracking)
    
-    ***ANS:*** `git add --all -- ':!path/to/file1`
+    ***ANS:*** 
 
-6. `hint: Updates were rejected because the tip of your current branch is behind`
+    1). Add all except the targets to commit `git add --all -- ':!path/to/file1`
 
-    ***ANS:***`git push -u origin main -f`
-7. Delete one commit
+    2). `touch .gitignore` to create `.gitignore`, then edit it as:
+    ```
+    target          //ignore target folder
+    angular.json    //ignore angular.json
+    log/*           //ignore all the files under /log
+    css/*.css       //ignore all the .css files under /css
+   ```
+   and finally, `git add .`
+
+6. `hint: Updates were rejected because the tip of your current branch is behind`. Since the remote is without any files.
+
+    ***ANS:*** Force to push the files `git push -u origin main -f`
+7. Delete commit
    
-   ***ANS:*** `git reset --soft HEAD^`
+   ***ANS:*** Reset to staging. `git reset --soft HEAD^` 
+    p.s. if check with `git status`, working area is no commits
 
 8. See full history of log
 
     ***ANS:*** `git log --all --full-history` 
+
+    ![log_his.png](images%2Flog_his.png)
 9. Delete targets from specific folder
 
     ***ANS:*** `git rm --cached 02-experiment-tracking/ -r `
+10. Show info of Commit History
+    `git show 9ddc9dca00b --stat`
+
+    ![git_show.png](images%2Fgit_show.png)
+
+git push origin aff53c790ed13236fbfdfce5feee473324bc7a5a:master
+
+11. `git merge` & `git rebase` 
+    
+[Git pull usage]https://www.atlassian.com/git/tutorials/syncing/git-pull
+    
+```
+x--x--C1--C2--C3 (B)
+    |
+  (origin/B)
+
+1). git merge -i C1~
+
+x--x--C1--C2--C3 (B)
+    |          ^
+    |          |
+  (origin/B) -->
+
+2). git rebase -i C1~
+
+ x--x--C2'--C1'--C3' (B)
+    |
+  (origin/B)
+```
+ 
+12. It is suitable for completely deleting large resources from git from a git project, including historical submission records. 
+    If it's not enough to delete a file in a directory, as long as the file is in the commit record, there will be information about the file in `.git`. 
+    Use `filter-branch` to forcibly modify the submission information, and erase the historical submission traces of a certain file, as if this file has never existed
+    1). Root folder, run `git rev-list --all | xargs -rL1 git ls-tree -r --long | sort -uk3 | sort -rnk4 | head -10`
+    2). Edit commit `git filter-branch --tree-filter "rm -f {filepath}" -- --all`
+    3). Force to push it to remote `git push -f --all`
+

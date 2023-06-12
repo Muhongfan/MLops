@@ -61,16 +61,39 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 MLflow currently offers four components:
 
 - MLflow Tracking
-Record and query experiments: code, data, config, and results
+Record and query experiments: 
+  - code 
+  - data
+  - config
+  - results
 
 - MLflow Projects
-Package data science code in a format to reproduce runs on any platform
+
+    If a project contains multiple algorithms that can be run separately, in that multiple entry points are mentioned in MLProject file.
+
+    Properties of a project:
+  - Name - Name of the project 
+  - Entry Points - Typically a .py or .sh file to run the entire project or some specific functionality, say an algorithm. List of entry points are mentioned in MLProject file 
+  - Environment - Specifications such as library dependencies for the software environment for the code to run. Supported environments - conda environments, virtualenv environments, docker environments.
 
 - MLflow Models
-Deploy machine learning models in diverse serving environments
 
+    A typical model directory contains the following files:
+
+    - MLmodel - a YAML file describing model flavours, time created, run_id if the model was created in experiment tracking, signature denoting input and output details, input example, version of databricks runtime (if used) and mlflow version 
+    - model.pkl - saved model pickle file 
+    - conda.yaml - environment specifications for conda environment manager 
+    - python_env.yaml - environment specification for virtualenv environment manager 
+    - requirements.txt - list of pip installed libraries for dependencies
 - Model Registry
-Store, annotate, discover, and manage models in a central repository
+
+    Model Registry concepts to manage life cycle of mlflow model:
+
+    - Model - An mlflow model logged with one of the flavours mlflow.<model_flavour>.log_model()
+    - Registered model - An mlflow model registered on Model Registry. It has a unique name, contains versions, transitional stages, model lineage and other associated metadata. 
+    - Model Version - Version of the registered model 
+    - Model Stage - Each distinct model version can be associated with one stage at a time. Stages supported are Staging, Production and Archived. 
+    - Annotations and descriptions - Add useful information such as descriptions, data used, methodology etc. to the registered model.
 
 ***Ref:***  https://www.mlflow.org/
 

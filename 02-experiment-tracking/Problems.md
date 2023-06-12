@@ -11,7 +11,7 @@
 
 3. **MlflowException: Cannot set a deleted experiment 'nyc-taxi-experiment' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.**
 
-  ***ANS:*** `mlflow gc --backend-store-uri sqlite:///mlflow.db(replace with your PATH)`
+    ***ANS:*** `mlflow gc --backend-store-uri sqlite:///mlflow.db(replace with your PATH)`
 4. `[2023-06-09 16:54:01 -0400] [21091] [ERROR] Connection in use: ('127.0.0.1', 5000)
   [2023-06-09 16:54:01 -0400] [21091] [ERROR] Retrying in 1 second.`
 
@@ -21,6 +21,7 @@
 1. `(modified content, untracked content)`
     
     ***ANS:*** Jump to the target folder,  `rm -rf .git*`
+
 2. After ` git push origin main`, message as `git@github.com: Permission denied (publickey). 
   fatal: Could not read from remote repository.
      Please make sure you have the correct access rights
@@ -42,9 +43,23 @@
     ***ANS:*** ` git pull origin main --allow-unrelated-histories`
 
 4. Tracking files
-    `git ls-tree -r master --name-only`
+    
+    ***ANS:*** `git ls-tree -r master --name-only`
 
 5. Do not want to update specific files
-   `git add --all -- ':!path/to/file1`
+   
+    ***ANS:*** `git add --all -- ':!path/to/file1`
 
-6. 
+6. `hint: Updates were rejected because the tip of your current branch is behind`
+
+    ***ANS:***`git push -u origin main -f`
+7. Delete one commit
+   
+   ***ANS:*** `git reset --soft HEAD^`
+
+8. See full history of log
+
+    ***ANS:*** `git log --all --full-history` 
+9. Delete targets from specific folder
+
+    ***ANS:*** `git rm --cached 02-experiment-tracking/ -r `

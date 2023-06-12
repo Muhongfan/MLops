@@ -191,9 +191,11 @@ Links:
 
 * [Notebook](duration-prediction.ipynb)
 
-## 1.5 Maturity models
+## 1.5 What is MLops
+![neptune-mlops.png](neptune-mlops.png)
+## 1.6 Maturity models
 Resources from: https://learn.microsoft.com/en-us/azure/architecture/example-scenario/mlops/mlops-maturity-model
-### 1.5.1 Types of maturity models
+### 1.6.1 Types of maturity models
 0. No MLOps
 Highlights:
 - Difficult to manage full machine learning model lifecycle

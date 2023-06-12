@@ -82,6 +82,7 @@
    
    ***ANS:*** Reset to staging. `git reset --soft HEAD^` 
     p.s. if check with `git status`, working area is no commits
+    ***Similar*** [Delete commit 2/3](https://www.jianshu.com/p/c9f131e22a60)
 
 8. See full history of log
 

@@ -9,7 +9,6 @@ Module 1: Introduction
 * Maturity models
 * Note: Github - Token for identification
 
-
 Module 2: Experiment tracking and model management
 * Why MLops
 * Experiment tracking intro 

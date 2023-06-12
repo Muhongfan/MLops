@@ -152,7 +152,6 @@ Model Registry concepts to manage life cycle of mlflow model:
 * Model Stage - Each distinct model version can be associated with one stage at a time. Stages supported are Staging, Production and Archived. 
 * Annotations and descriptions - Add useful information such as descriptions, data used, methodology etc. to the registered model.
 
-![model_registry.png](images%2Fmodel_registry.png)
 As we already run different models and collect the version information. We want to tag the models in different stages(staging, production, archived).
 Considering the information of models, such as *Duration*, *Size*, ..., we `Register Model` for each selection, and name the new Model group as 'nyc_taxi_regressor'.
 And see the comparison of the selections in `Models` on the top.

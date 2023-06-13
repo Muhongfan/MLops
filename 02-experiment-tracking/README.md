@@ -117,15 +117,15 @@ To access mlflow ui open `https://127.0.0.1:5000` in your browser.
 
 ## 2.3 Experiment tracking with MLflow
 Linear model:
-[duration-prediction.ipynb](basic_mlflow.ipynb)
+[duration-prediction.ipynb](01_ basic_mlflow.ipynb)
 ![lr.png](images%2Flr.png)
 
 Xgboost:
-[xgboost.ipynb](xgboost.ipynb)
+[xgboost.ipynb](02_xgboost.ipynb)
 ![xgboost.png](images%2Fxgboost.png)
 
 Ensemble:
-[ensemble.ipynb](ensemble.ipynb)
+[ensemble.ipynb](03_ensemble.ipynb)
 ![ensemble.png](images%2Fensemble.png)
 
 ## 2.4 Model management
@@ -135,7 +135,7 @@ Ensemble:
 * Log model using the method `log_model`:
 `mlflow.<framework>.log_model(model, artifact_path = "models/")`
 
-Examples are in [xgboost.ipynb](xgboost.ipynb):
+Examples are in [xgboost.ipynb](02_xgboost.ipynb):
 
 ## 2.5 Model registry
 [Model Registry](https://mlflow.org/docs/latest/model-registry.html) is to manage life cycle of mlflow model for improving efficiency in developing:
@@ -152,7 +152,7 @@ The concepts should be known:
 
 1). UI workflow;
 
-2). API workflow: [model-registry.ipynb](model-registry.ipynb)
+2). API workflow: [model-registry.ipynb](04_model-registry.ipynb)
 
 Explaining workflow:
 - Adding an MLflow Model to the Model Registry

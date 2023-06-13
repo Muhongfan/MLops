@@ -117,7 +117,7 @@ To access mlflow ui open `https://127.0.0.1:5000` in your browser.
 
 ## 2.3 Experiment tracking with MLflow
 Linear model:
-[duration-prediction.ipynb](para_tracking_duration-prediction.ipynb)
+[duration-prediction.ipynb](basic_mlflow.ipynb)
 ![lr.png](images%2Flr.png)
 
 Xgboost:
@@ -130,46 +130,88 @@ Ensemble:
 
 ## 2.4 Model management
 * Load model as an artifact:
-`mlflow.log_artifact("mymodel", artifact_path = "models/")`
+`mlflow.log_artifact("models/preprocessor.b", artifact_path="preprocessor")`
 
 * Log model using the method `log_model`:
 `mlflow.<framework>.log_model(model, artifact_path = "models/")`
 
 Examples are in [xgboost.ipynb](xgboost.ipynb):
 
-* Load model as an artifact:
-`mlflow.log_artifact("models/preprocessor.b", artifact_path="preprocessor")`
-
-* Log model using the method `log_model`:
-`mlflow.xgboost.log_model(model, artifact_path="models_mlflow")`
-
 ## 2.5 Model registry
-Model Registry concepts to manage life cycle of mlflow model:
+[Model Registry](https://mlflow.org/docs/latest/model-registry.html) is to manage life cycle of mlflow model for improving efficiency in developing:
+![model_registry.png](images%2Fmodel_registry.png)
 
+The concepts should be known:
 * Model - An mlflow model logged with one of the flavours `mlflow.<model_flavour>.log_model()`
 * Registered model - An mlflow model registered on Model Registry. It has a unique name, contains versions, transitional stages, model lineage and other associated metadata. 
 * Model Version - Version of the registered model 
 * Model Stage - Each distinct model version can be associated with one stage at a time. Stages supported are Staging, Production and Archived. 
 * Annotations and descriptions - Add useful information such as descriptions, data used, methodology etc. to the registered model.
 
-As we already run different models and collect the version information. We want to tag the models in different stages(staging, production, archived).
-Considering the information of models, such as *Duration*, *Size*, ..., we `Register Model` for each selection, and name the new Model group as 'nyc_taxi_regressor'.
-And see the comparison of the selections in `Models` on the top.
+[Two workflow](https://mlflow.org/docs/latest/model-registry.html) for it, one is from UI, the other is from API.
 
-![registry.png](images%2Fregistry.png)
-![Versions.png](images%2FVersions.png)
+1). UI workflow;
 
-Then tag the stages of each selection.
-![Versions.png](images%2FVersions.png)
+2). API workflow: [model-registry.ipynb](model-registry.ipynb)
 
-Code for checking the versions: [model-registry.ipynb](model-registry.ipynb)
+Explaining workflow:
+- Adding an MLflow Model to the Model Registry
+
+- Fetching an MLflow Model from the Model Registry
+
+- Serving an MLflow Model from Model Registry
+
+- Adding or Updating an MLflow Model Descriptions
+
+- Renaming an MLflow Model
+
+- Transitioning an MLflow Model’s Stage
+
+- Listing and Searching MLflow Models
+
+- Archiving an MLflow Model
+
+- Deleting MLflow Models
+
+- Registering a Model Saved Outside MLflow
+
+- Registering an Unsupported Machine Learning Model
+
+- Using Registered Model Aliases
+
+
 
 
 ## 2.6 MLflow in practice
+Depending upon the project and number of data scientists going to collaborate, the configurational aspect of mlflow is decided. Consider the following three scenarios:
 
-
+- A single data scientist participating in a competition
+[scenario-1.ipynb](running-mlflow-examples%2Fscenario-1.ipynb)
+- A cross-functional team with single data scientist
+[scenario-2.ipynb](running-mlflow-examples%2Fscenario-2.ipynb)
+- Multiple data scientists working together on models
+[scenario-3.ipynb](running-mlflow-examples%2Fscenario-3.ipynb)
 ## 2.7 MLflow: benefits, limitations and alternatives
 
+- Benefits
 
+    - Share and collaborate with other members
+    - More visibility into all the efforts
+- Limitations
+
+  - Security - restricting access to the server
+  - Scalability
+  - Isolation - restricting access to certain artifacts
+- When not to use
+
+  - Authentication and user profiling is required
+  - Data versioning - no in-built functionality but there are work arounds
+  - Model/Data monitoring and alerts are required
+- Alternates
+
+  - Nepture.ai
+  - Comet.ai
+  - Weights and Biases
+  - etc
 
 

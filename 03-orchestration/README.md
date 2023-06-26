@@ -54,7 +54,7 @@ Create `03-orchestration` folder already.
 5. Open another terminal to run the sample
   `python hello_prefect.py`
 
-By adding the @flow decorator to a function, function calls will create a flow run — the Prefect orchestration engine manages flow and task state regardless of where your flow code runs.
+  By adding the @flow decorator to a function, function calls will create a flow run — the Prefect orchestration engine manages flow and task state regardless of where your flow code runs.
 6. After successfully run the sample, the dashboard will be:
    (Red: Failed cases; Green: Successful cases)
 
@@ -64,17 +64,17 @@ Since it does not work (16:36:11.226 | INFO    | Task run 'fetch_cat_fact-0' - [
 ), just replace the address with `https://google.com`, and try it again.
 
 
-## 3.3 Orchestration
+## 3.3 Run a work flow
 ```
 ├── duration_prediction_explore.ipynb
 ├── duration_prediction_original.ipynb
 ├── orchestrate.py
 └── orchestrate_pre_prefect.py
 ```
-`duration_prediction_original.ipynb`: Originally `duration-prediction.ipynb` from Module 2.
-`duration_prediction_explore.ipynb`: An exploration based on `duration_prediction_original.ipynb` for looking at what some of the returned types, such as .
-`orchestrate_pre_prefect.py`: the orchestration of the work. 
-`orchestrate.py`: Using `prefect` for the orchestration of the work with introducing `@task` and `@flow`(based on`orchestrate_pre_prefect.py`).
+- `duration_prediction_original.ipynb`: Originally `duration-prediction.ipynb` from Module 2.
+- `duration_prediction_explore.ipynb`: An exploration based on `duration_prediction_original.ipynb` for looking at what some of the returned types, such as .
+- `orchestrate_pre_prefect.py`: the orchestration of the work. 
+- `orchestrate.py`: Using `prefect` for the orchestration of the work with introducing `@task` and `@flow`(based on`orchestrate_pre_prefect.py`).
 
 Differences between `orchestrate_pre_prefect.py` and `orchestrate.py`:
 
@@ -90,25 +90,58 @@ And jump to the dashboard at ` http://127.0.0.1:4200`
 ## 3.4 Deploying your Workflow
 1. Jump to 3.4 folder(which is empty right now). 
 2. Copy `orchestrate.py` from 3.3. 
-3. Open Terminal and check your GIT remote repo.
+3. Open Terminal and check your GIT remote repo. (PUSH your updated local repo to remote right now!! )
 4. Make sure you are under MLops (root) folder and create deployment files.
 
-```prefect project init``` 
+  ```prefect project init``` 
 
-The page should be as follows:
+  The page should be as follows:
 
-![yaml.png](images%2Fyaml.png)
+  ![yaml.png](images%2Fyaml.png)
 
 5. Create a work pool with prefect UI. 
 
-```Name - 'zoompool', Type - 'process'```
+  ```Name - 'zoompool', Type - 'process'```
 6. Go back to terminal and deploy the task.
 
-```prefect deploy 03-orchestration/3.4/orchestrate.py:main_flow -n taxi1 -p zoompool``` 
+  ```prefect deploy 03-orchestration/3.4/orchestrate.py:main_flow -n taxi1 -p zoompool``` 
 
 ![de_deploy.png](images%2Fde_deploy.png)
 7.  Start a worker that pulls work from the `zoompool` work pool
 
-```prefect worker start -p zoompool```
+  ```prefect worker start -p zoompool```
 
-8. Deploy flow from the UI
+8. Deploy flow from the UI: click on quick run for the flow you deployed on prefect. (This step can also be achieved by CLI)
+
+
+## 3.5 Working with Deployments
+1. Create a file named as `create_s3_bucket_block.py` in 3.5 folder
+2. Open AWS IAM(Identity and Access Management (IAM))
+- Step 1 Specify user details: 
+
+  * Go to the right side bar, and click 'Users' to creat a new IAM user. 
+
+  * Name the new IAM user as `mlops-zoom-user`, and then click on 'NEXT'.
+
+- Step 2 Set permissions:
+  * Create a new group and choose `AmazonS3FullAccess` as 'Permissions Policies', then 'NEXT'.
+       ![s3group.png](images%2Fs3group.png)
+- Step 3 Review and create:
+  * Click on 'Creat User'
+3. Go back to IAM, and click on 'Users'
+- Stetp 1 Access key best practices & alternatives:
+  - Jump to the new user we created. Go to `Security Cedentials` to `create access key`
+- Step 2 (optional) Set description tag:
+  - Choose `Other`, then `Next` to the end
+- Step 3 Retrieve access keys:
+  - Copy `Access key` and `Secret access key` and paste them to `create_s3_bucket_block.py`.
+4. Go to Terminal and root folder, `python 03-orchestration/3.5/create_s3_bucket_block.py` to run the file. Then open the prefect UI, you will see two blocks are generated in prefect.
+![s3bucket.png](images%2Fs3bucket.png)
+
+### Upload dataset to AWS S3 
+
+##Note :
+- To see the blocks in the server: `prefect block ls`
+![s3block_server.png](images%2Fs3block_server.png)
+- To see the different block types: `prefect block type ls`
+- To register all the block types available to server: `prefect block register -m prefect-aws` (note: should install [`prefect-aws`](https://github.com/PrefectHQ/prefect-aws/blob/main/README.md) module first)

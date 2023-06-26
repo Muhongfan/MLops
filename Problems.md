@@ -9,9 +9,10 @@
 
     ***ANS:*** Pay attention to the current location you run MLflow, should be the location with the experiments.
 
-3. **MlflowException: Cannot set a deleted experiment 'nyc-taxi-experiment' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.**
+3. **MlflowException: Cannot set a deleted experiment 'nyc-taxi-experiment' as the active experiment. 
+You can restore the experiment, or permanently delete the experiment to create a new one.**
 
-    ***ANS:*** `mlflow gc --backend-store-uri sqlite:///mlflow.db(replace with your PATH)`
+     ***ANS:*** `mlflow gc --backend-store-uri sqlite:///mlflow.db(replace with your PATH)`
 4. `[2023-06-09 16:54:01 -0400] [21091] [ERROR] Connection in use: ('127.0.0.1', 5000)
   [2023-06-09 16:54:01 -0400] [21091] [ERROR] Retrying in 1 second.`
 
@@ -66,7 +67,7 @@
 
     1). Add all except the targets to commit `git add --all -- ':!path/to/file1`
 
-    2). `touch .gitignore` to create `.gitignore`, then edit it as:
+    2). `touch .gitignore` to create [`.gitignore`](https://git-scm.com/docs/gitignore#_pattern_format), then edit it as:
     ```
     target          //ignore target folder
     angular.json    //ignore angular.json

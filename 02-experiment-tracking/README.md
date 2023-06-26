@@ -117,7 +117,7 @@ To access mlflow ui open `https://127.0.0.1:5000` in your browser.
 
 ## 2.3 Experiment tracking with MLflow
 Linear model:
-[duration-prediction.ipynb](01_ basic_mlflow.ipynb)
+[duration-prediction.ipynb](01_ linear.ipynb)
 ![lr.png](images%2Flr.png)
 
 Xgboost:

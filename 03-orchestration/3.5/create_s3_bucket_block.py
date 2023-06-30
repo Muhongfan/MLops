@@ -4,7 +4,9 @@ from prefect_aws import S3Bucket, AwsCredentials
 
 def create_aws_creds_block():
     my_aws_creds_obj = AwsCredentials(
-        aws_access_key_id = "IAM-ID", aws_secret_access_key = "IAM-ACCESS"
+
+        # Your info
+        aws_access_key_id = "_", aws_secret_access_key = "_/_"
     )
     my_aws_creds_obj.save(name="mlops-zoom-user", overwrite=True)
 
@@ -19,4 +21,8 @@ def create_s3_bucket_block():
 if __name__ == "__main__":
     create_aws_creds_block()
     sleep(5)
+<<<<<<< HEAD
     create_s3_bucket_block()
+=======
+    crete_s3_bucket_block()
+>>>>>>> 26779dee44b0ece8f745442278fe2f9307d619bd

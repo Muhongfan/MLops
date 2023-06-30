@@ -4,6 +4,6 @@ deployments:
   work_pool:
     name: zoompool
 - name: taxi_s3_data
-  entrypoint: 03-orchestration/3.5/orchestrate_v3.py:main_flow_s3
+  entrypoint: 03-orchestration/3.5/orchestrate_s3.py:main_flow_s3
   work_pool:
     name: zoompool

@@ -125,7 +125,7 @@ And jump to the dashboard at ` http://127.0.0.1:4200`
 
 - Step 2 Set permissions:
   * Create a new group and choose `AmazonS3FullAccess` as 'Permissions Policies', then 'NEXT'.
-       ![s3group.png](images%2Fs3group.png)
+  ![s3group.png](images%2Fs3group.png)
 - Step 3 Review and create:
   * Click on 'Creat User'
 3. Go back to IAM, and click on 'Users'
@@ -136,12 +136,39 @@ And jump to the dashboard at ` http://127.0.0.1:4200`
 - Step 3 Retrieve access keys:
   - Copy `Access key` and `Secret access key` and paste them to `create_s3_bucket_block.py`.
 4. Go to Terminal and root folder, `python 03-orchestration/3.5/create_s3_bucket_block.py` to run the file. Then open the prefect UI, you will see two blocks are generated in prefect.
+
 ![s3bucket.png](images%2Fs3bucket.png)
 
-### Upload dataset to AWS S3 
-
-##Note :
+## Note :
 - To see the blocks in the server: `prefect block ls`
-![s3block_server.png](images%2Fs3block_server.png)
+!![s3block.png](images%2Fs3block.png)
 - To see the different block types: `prefect block type ls`
 - To register all the block types available to server: `prefect block register -m prefect-aws` (note: should install [`prefect-aws`](https://github.com/PrefectHQ/prefect-aws/blob/main/README.md) module first)
+
+### Create artifacts Upload dataset to AWS S3 
+In [orchestrate_s3.py](3.5%2Forchestrate_s3.py)
+1. Load data from s3 bucket in main flow
+   ```
+   # your bucket name
+   s3_bucket_block = S3Bucket.load("zoomcamp-mlops")
+   s3_bucket_block.download_folder_to_path(from_folder = "data", to_folder = "data")
+   ```
+2. Run `orchestrate_s3.py`
+3. Deployment of the flow.
+   - Open `deployment.yaml`
+      ```
+      deployments:
+      - name: taxi_local_data
+        entrypoint: 03-orchestration/3.4/orchestrate.py:main_flow
+        work_pool:
+          name: zoompool
+      - name: taxi_s3_data
+        entrypoint: 03-orchestration/3.5/orchestrate_s3.py:main_flow_s3
+        work_pool:
+          name: zoompool
+      ```
+  - Deploy the flow after configuation
+    `prefect deploy --all`
+  - Deploy artifacts by adding `create_markdown_artifact` first, and then `prefect deployment run main-flow-s3/taxi_s3_data`
+
+  ![s3artifacts.png](images%2Fs3artifacts.png)

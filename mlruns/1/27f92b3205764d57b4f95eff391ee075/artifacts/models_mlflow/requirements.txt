@@ -1,0 +1,10 @@
+mlflow<3,>=2.3
+lz4==4.3.2
+numpy==1.24.3
+pandas==1.5.3
+pathlib==1.0.1
+psutil==5.9.0
+scikit-learn==1.2.2
+scipy==1.10.1
+typing-extensions==4.6.3
+xgboost==1.7.3

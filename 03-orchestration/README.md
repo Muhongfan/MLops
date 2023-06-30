@@ -172,3 +172,7 @@ In [orchestrate_s3.py](3.5%2Forchestrate_s3.py)
   - Deploy artifacts by adding `create_markdown_artifact` first, and then `prefect deployment run main-flow-s3/taxi_s3_data`
 
   ![s3artifacts.png](images%2Fs3artifacts.png)
+
+4. Schedule ([Official Docs](https://docs.prefect.io/2.10.17/concepts/schedules/))
+  - You can add, modify, and view schedules by selecting Edit under the three dot menu next to a Deployment in the Deployments tab of the Prefect UI.
+  - Creating schedules through a Python deployment file¶

@@ -21,8 +21,4 @@ def create_s3_bucket_block():
 if __name__ == "__main__":
     create_aws_creds_block()
     sleep(5)
-<<<<<<< HEAD
     create_s3_bucket_block()
-=======
-    crete_s3_bucket_block()
->>>>>>> 26779dee44b0ece8f745442278fe2f9307d619bd

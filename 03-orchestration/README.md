@@ -1,4 +1,4 @@
-# 3. Workflow Orchestration
+# 3. Workflow Orchestration #
 
 This section is mainly about [Work Pools, Workers & Agents](https://docs.prefect.io/2.10.17/concepts/work-pools/). At the beginning, it introduces what is prefect and why we need it. 
 Then in 3.2 it introduces the basic use of prefect.
@@ -19,7 +19,7 @@ Database -- Pandas -- scikit learn --> dmlc XGBoost
                                    Flask
 ```
 
-## 3.2 Introduction to Prefect
+## 3.2 Introduction of Prefect
 [Prefect](https://github.com/PrefectHQ/prefect/tree/main) is an orchestrator for data-intensive workflows. It's the simplest way to transform any Python function into a unit of work that can be observed and orchestrated. With Prefect, you can build resilient, dynamic workflows that react to the world around them and recover from unexpected changes. With just a few decorators, Prefect supercharges your code with features like automatic retries, distributed execution, scheduling, caching, and much more. Every activity is tracked and can be monitored with the Prefect server or Prefect Cloud dashboard.
 
 The central [components](https://docs.prefect.io/2.10.13/tutorial/first-steps/) of Prefect workflows.
@@ -39,29 +39,32 @@ Tasks represent distinct pieces of work executed within a flow.
 ### 3.2.1 Install Prefect
 [Installing the latest version](https://docs.prefect.io/2.10.13/getting-started/installation/)
 ### 3.2.1 Run simple example
-Create `03-orchestration` folder already.
+Create `03-orchestration` folder.
 1. Open one terminal. Create an CONDA environment, and activate it.
-  ```
-  conda create -n prefect-ops 
-  conda activate prefect-ops
-  ```
+    ```
+    conda create -n prefect-ops 
+    conda activate prefect-ops
+    ```
 2. Install the [requirements.txt](requirements.txt) for the project.
-  `pip install -r requirements.txt`
+  
+    `pip install -r requirements.txt`
 3. Open prefect server
-  `prefect server start`
+
+    `prefect server start`
 4. Check out the dashboard at http://127.0.0.1:4200
 
 5. Open another terminal to run the sample
-  `python hello_prefect.py`
 
-  By adding the @flow decorator to a function, function calls will create a flow run — the Prefect orchestration engine manages flow and task state regardless of where your flow code runs.
+    `python hello_prefect.py`
+
+    By adding the @flow decorator to a function, function calls will create a flow run — the Prefect orchestration engine manages flow and task state regardless of where your flow code runs.
 6. After successfully run the sample, the dashboard will be:
-   (Red: Failed cases; Green: Successful cases)
+   Red: Failed cases; Green: Successful cases
 
 ### Notes:
 There is a `cat_facts.py` in the [original repo](https://github.com/DataTalksClub/mlops-zoomcamp/blob/main/03-orchestration/3.2/cat_facts.py). 
-Since it does not work (16:36:11.226 | INFO    | Task run 'fetch_cat_fact-0' - [Errno 8] nodename nor servname provided, or not known
-), just replace the address with `https://google.com`, and try it again.
+
+Since it does not work  (***Task run 'fetch_cat_fact-0' - [Errno 8] nodename nor servname provided, or not known***), just replace the address with `https://google.com`, and try it again.
 
 
 ## 3.3 Run a work flow
@@ -71,19 +74,19 @@ Since it does not work (16:36:11.226 | INFO    | Task run 'fetch_cat_fact-0' - [
 ├── orchestrate.py
 └── orchestrate_pre_prefect.py
 ```
-- `duration_prediction_original.ipynb`: Originally `duration-prediction.ipynb` from Module 2.
-- `duration_prediction_explore.ipynb`: An exploration based on `duration_prediction_original.ipynb` for looking at what some of the returned types, such as .
+- `duration_prediction_original.ipynb`: Original `duration-prediction.ipynb` from Module 2.
+- `duration_prediction_explore.ipynb`: An exploration based on `duration_prediction_original.ipynb` for looking at the returned types.
 - `orchestrate_pre_prefect.py`: the orchestration of the work. 
 - `orchestrate.py`: Using `prefect` for the orchestration of the work with introducing `@task` and `@flow`(based on`orchestrate_pre_prefect.py`).
 
 Differences between `orchestrate_pre_prefect.py` and `orchestrate.py`:
 
 ![diff_orch.png](images%2Fdiff_orch.png)
-Then, run `prefect server start` in Terminal.
+Then, run `prefect server start` in Terminal, and it can be:
 
 ![de_server.png](images%2Fde_server.png)
 
-And jump to the dashboard at ` http://127.0.0.1:4200`
+Then jump to the dashboard at ` http://127.0.0.1:4200`
 
 ![de_ui.png](images%2Fde_ui.png)
 
@@ -93,23 +96,23 @@ And jump to the dashboard at ` http://127.0.0.1:4200`
 3. Open Terminal and check your GIT remote repo. (PUSH your updated local repo to remote right now!! )
 4. Make sure you are under MLops (root) folder and create deployment files.
 
-  ```prefect project init``` 
+    `prefect project init` 
 
-  The page should be as follows:
+    The page should be as follows:
 
-  ![yaml.png](images%2Fyaml.png)
+    ![yaml.png](images%2Fyaml.png)
 
 5. Create a work pool with prefect UI. 
 
-  ```Name - 'zoompool', Type - 'process'```
+    `Name - 'zoompool', Type - 'process'`
 6. Go back to terminal and deploy the task.
 
-  ```prefect deploy 03-orchestration/3.4/orchestrate.py:main_flow -n taxi1 -p zoompool``` 
+    `prefect deploy 03-orchestration/3.4/orchestrate.py:main_flow -n taxi1 -p zoompool`
 
-![de_deploy.png](images%2Fde_deploy.png)
+    ![de_deploy.png](images%2Fde_deploy.png)
 7.  Start a worker that pulls work from the `zoompool` work pool
 
-  ```prefect worker start -p zoompool```
+   `prefect worker start -p zoompool`
 
 8. Deploy flow from the UI: click on quick run for the flow you deployed on prefect. (This step can also be achieved by CLI)
 
@@ -135,27 +138,24 @@ And jump to the dashboard at ` http://127.0.0.1:4200`
   - Choose `Other`, then `Next` to the end
 - Step 3 Retrieve access keys:
   - Copy `Access key` and `Secret access key` and paste them to `create_s3_bucket_block.py`.
-4. Go to Terminal and root folder, `python 03-orchestration/3.5/create_s3_bucket_block.py` to run the file. Then open the prefect UI, you will see two blocks are generated in prefect.
+4. Go to Terminal, jump to root folder and run the file. Then open the prefect UI, you will see two blocks are generated in prefect.
 
-![s3bucket.png](images%2Fs3bucket.png)
+   `python 03-orchestration/3.5/create_s3_bucket_block.py` 
+   ![s3bucket.png](images%2Fs3bucket.png)
 
-## Note :
-- To see the blocks in the server: `prefect block ls`
-!![s3block.png](images%2Fs3block.png)
-- To see the different block types: `prefect block type ls`
-- To register all the block types available to server: `prefect block register -m prefect-aws` (note: should install [`prefect-aws`](https://github.com/PrefectHQ/prefect-aws/blob/main/README.md) module first)
-
-### Create artifacts Upload dataset to AWS S3 
+5. Create artifacts Upload dataset to AWS S3 
 In [orchestrate_s3.py](3.5%2Forchestrate_s3.py)
-1. Load data from s3 bucket in main flow
+
+    1). Load data from s3 bucket in main flow
    ```
    # your bucket name
    s3_bucket_block = S3Bucket.load("zoomcamp-mlops")
    s3_bucket_block.download_folder_to_path(from_folder = "data", to_folder = "data")
    ```
-2. Run `orchestrate_s3.py`
-3. Deployment of the flow.
-   - Open `deployment.yaml`
+    2). Run `orchestrate_s3.py`
+
+    3). Deployment of the flow.
+    - Open `deployment.yaml`
       ```
       deployments:
       - name: taxi_local_data
@@ -167,12 +167,18 @@ In [orchestrate_s3.py](3.5%2Forchestrate_s3.py)
         work_pool:
           name: zoompool
       ```
-  - Deploy the flow after configuation
-    `prefect deploy --all`
-  - Deploy artifacts by adding `create_markdown_artifact` first, and then `prefect deployment run main-flow-s3/taxi_s3_data`
+   - Deploy the flow after configuation
+     `prefect deploy --all`
+   - Deploy artifacts by adding `create_markdown_artifact` first, and then `prefect deployment run main-flow-s3/taxi_s3_data`
 
-  ![s3artifacts.png](images%2Fs3artifacts.png)
+    ![s3artifacts.png](images%2Fs3artifacts.png)
 
-4. Schedule ([Official Docs](https://docs.prefect.io/2.10.17/concepts/schedules/))
-  - You can add, modify, and view schedules by selecting Edit under the three dot menu next to a Deployment in the Deployments tab of the Prefect UI.
-  - Creating schedules through a Python deployment file¶
+    6). Schedule ([Official Docs](https://docs.prefect.io/2.10.17/concepts/schedules/))
+   - You can add, modify, and view schedules by selecting Edit under the three dot menu next to a Deployment in the Deployments tab of the Prefect UI.
+   - Creating schedules through a Python deployment file
+
+
+### Notes:
+* **FileNotFoundError: [Errno 2] No such file or directory**
+
+ ***ANS***: Check the access of S3 block if it is public or not

@@ -113,7 +113,8 @@ AUTHENTICATION TYPE: (Key pair)
 **Note**: 
 USERNAME should all be lower case.
 
-`Key pair` for AUTHENTICATION TYPE should be the one you got for the instance on AWS: `/Users/YOURUSERNAME/.ssh/YOURSKEYPAIR.pem`. If you did not save the key pair in `~/.ssh`, please move it under this folder.
+`Key pair` for AUTHENTICATION TYPE should be the one you got for the instance on AWS: `/Users/YOURUSERNAME/.ssh/YOURSKEYPAIR.pem`. 
+If you did not save the key pair in `~/.ssh`, please move it under this folder.
 
 The Public IPv4 address will be reassigned everytime you restart the instance, which means,  you are required to update HOST infor everytime you start the instance.
 

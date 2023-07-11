@@ -108,12 +108,26 @@ Next we activate the newly created environment.
   
 Install the required packages listed in requirements.txt file.  
 ```pip install -r requirements.txt```
-```pip install -r requirements.txt``
 
 Launch mlflow ui as well. Run the following command to start mlflow ui (a gunicorn server) connected to the backend sqlite database.  
 ```mlflow ui --backend-store-uri sqlite:///mlflow.db```
 
 To access mlflow ui open `https://127.0.0.1:5000` in your browser.
+
+## Note for MLflow tracking:
+An MLflow tracking server has two components for storage: a backend store and an artifact store.
+
+The backend store is where MLflow Tracking Server stores experiment and run metadata as well as params, metrics, and tags for runs. MLflow supports two types of backend stores: file store and database-backed store.
+
+Use `--backend-store-uri` to configure the type of backend store. You specify a file store backend as `./path_to_store` or `file:/path_to_store` and a database-backed store as SQLAlchemy database URI. 
+The database URI typically takes the format `<dialect>+<driver>://<username>:<password>@<host>:<port>/<database>`. MLflow supports the database dialects ***mysql, mssql, sqlite***, and ***postgresql***. 
+Drivers are optional. If you do not specify a driver, SQLAlchemy uses a dialect’s default driver. For example, `--backend-store-uri sqlite:///mlflow.db` would use a local SQLite database.
+
+By default `--backend-store-uri` is set to the local `./mlruns` directory (the same as when running `mlflow run` locally), but when running a server, make sure that this points to a persistent (that is, non-ephemeral) file system location.
+
+The artifact store is a location suitable for large data (such as an S3 bucket or shared NFS file system or as our use case: HDFS ) and is where clients log their artifact output (for example, models). artifact_location is a property recorded on mlflow.entities.Experiment for default location to store artifacts for all runs in this experiment. Additional, artifact_uri is a property on mlflow.entities.RunInfo to indicate location where all artifacts for this run are stored.
+
+Use --default-artifact-root (defaults to local ./mlruns directory) to configure default location to server’s artifact store. This will be used as artifact location for newly-created experiments that do not specify one. Once you create an experiment, --default-artifact-root is no longer relevant to that experiment.
 
 ## 2.3 Experiment tracking with MLflow
 Linear model:

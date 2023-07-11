@@ -1,8 +1,5 @@
 # 4.Deployment
-- Creating a virtual environment with Pipenv
-Creating a script for predictiong
-Putting the script into a Flask app
-Packaging the app to Docker
+
 1. Create the folder "web-service"
 2. Copy the `lin_reg.bin` file from the previous project
 
@@ -29,7 +26,7 @@ Packaging the app to Docker
 8. Since `WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.`, install gunicorn
 
    `gunicorn --bind=0.0.0.0:9696 predict:app`
-9. Creating a script in gunicorn for prediction and test files. Run the `test.py` 
+9. Creating a script in `gunicorn` for prediction and test files. Run the `test.py` 
 
    `python test.py`
 10. Lauch subshell in virtual environment

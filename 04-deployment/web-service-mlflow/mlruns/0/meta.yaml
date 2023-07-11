@@ -1,0 +1,6 @@
+artifact_location: file:///Users/amberm/PycharmProjects/MLops/04-deployment/web-service-mlflow/mlruns/0
+creation_time: 1689083244093
+experiment_id: '0'
+last_update_time: 1689083244093
+lifecycle_stage: active
+name: Default

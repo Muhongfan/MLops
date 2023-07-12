@@ -5,117 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="894b1ad8-0fae-4cc9-aac1-2127330a0dde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/.ipynb_checkpoints/random-forest-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/.ipynb_checkpoints/random-forest_pipeline-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/MLFLOW_TRACKING_URI/0/meta.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/Pipfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/Pipfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/imgs/mlflowbin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/imgs/pipeline-s3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/mlruns/0/meta.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/predict-pipline-s3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/predict-pipline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/random-forest_pipeline.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-intro/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/01-intro/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-experiment-tracking/01_ linear.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/02-experiment-tracking/01_ linear.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-experiment-tracking/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/02-experiment-tracking/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-experiment-tracking/data/green_tripdata_2021-01.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/02-experiment-tracking/data/green_tripdata_2021-01.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-experiment-tracking/data/green_tripdata_2021-02.parquet" beforeDir="false" afterPath="$PROJECT_DIR$/02-experiment-tracking/data/green_tripdata_2021-02.parquet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-experiment-tracking/mlflow.db" beforeDir="false" afterPath="$PROJECT_DIR$/02-experiment-tracking/mlflow.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-experiment-tracking/models/lin_reg.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-orchestration/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/03-orchestration/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service-mlflow/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service-mlflow/dict_vectorizer.bin" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/dict_vectorizer.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service-mlflow/random-forest.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/random-forest.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/00933da1137941cdba8ccbf2fd6fd63e/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/00933da1137941cdba8ccbf2fd6fd63e/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/00933da1137941cdba8ccbf2fd6fd63e/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/00933da1137941cdba8ccbf2fd6fd63e/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/00933da1137941cdba8ccbf2fd6fd63e/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/1cc35c8922aa446a9d17a82de3c4d0af/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/1cc35c8922aa446a9d17a82de3c4d0af/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/1cc35c8922aa446a9d17a82de3c4d0af/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/1cc35c8922aa446a9d17a82de3c4d0af/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/1cc35c8922aa446a9d17a82de3c4d0af/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2d3ae2fe42c64e73aa0a1495dbc6df78/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2d3ae2fe42c64e73aa0a1495dbc6df78/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2d3ae2fe42c64e73aa0a1495dbc6df78/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2d3ae2fe42c64e73aa0a1495dbc6df78/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2d3ae2fe42c64e73aa0a1495dbc6df78/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2ec90c0e13824d73861489669f3eb332/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2ec90c0e13824d73861489669f3eb332/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2ec90c0e13824d73861489669f3eb332/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2ec90c0e13824d73861489669f3eb332/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/2ec90c0e13824d73861489669f3eb332/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/325f0b7fc0c84c3d9495404acb8ff2db/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/325f0b7fc0c84c3d9495404acb8ff2db/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/325f0b7fc0c84c3d9495404acb8ff2db/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/325f0b7fc0c84c3d9495404acb8ff2db/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/325f0b7fc0c84c3d9495404acb8ff2db/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/37eb589c12de4a2abadf30a8dc2d7a51/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/37eb589c12de4a2abadf30a8dc2d7a51/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/37eb589c12de4a2abadf30a8dc2d7a51/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/37eb589c12de4a2abadf30a8dc2d7a51/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/37eb589c12de4a2abadf30a8dc2d7a51/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/50096e863b4f4614b6190de0c3822237/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/50096e863b4f4614b6190de0c3822237/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/50096e863b4f4614b6190de0c3822237/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/50096e863b4f4614b6190de0c3822237/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/50096e863b4f4614b6190de0c3822237/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/677cf7daf3224fc6b66ad67aa892152e/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/677cf7daf3224fc6b66ad67aa892152e/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/677cf7daf3224fc6b66ad67aa892152e/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/677cf7daf3224fc6b66ad67aa892152e/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/677cf7daf3224fc6b66ad67aa892152e/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/72a6a38045724ccc8fe9a967fad64744/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/72a6a38045724ccc8fe9a967fad64744/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/72a6a38045724ccc8fe9a967fad64744/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/72a6a38045724ccc8fe9a967fad64744/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/72a6a38045724ccc8fe9a967fad64744/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/97d44270b1674f618e3d79766f23fe0f/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/97d44270b1674f618e3d79766f23fe0f/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/97d44270b1674f618e3d79766f23fe0f/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/97d44270b1674f618e3d79766f23fe0f/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/97d44270b1674f618e3d79766f23fe0f/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/98a46cb16f5849b0b9fbb4e3218e7d62/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/98a46cb16f5849b0b9fbb4e3218e7d62/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/98a46cb16f5849b0b9fbb4e3218e7d62/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/98a46cb16f5849b0b9fbb4e3218e7d62/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/98a46cb16f5849b0b9fbb4e3218e7d62/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/b6ebc8c1bb794b3bb01621c042186b08/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/b6ebc8c1bb794b3bb01621c042186b08/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/b6ebc8c1bb794b3bb01621c042186b08/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/b6ebc8c1bb794b3bb01621c042186b08/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/b6ebc8c1bb794b3bb01621c042186b08/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/bad83ba57f03496e8aa79172716a5ef9/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/bad83ba57f03496e8aa79172716a5ef9/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/bad83ba57f03496e8aa79172716a5ef9/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/bad83ba57f03496e8aa79172716a5ef9/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/bad83ba57f03496e8aa79172716a5ef9/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c5e0ffb3b37d406f8fcda84a10f8c08b/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c5e0ffb3b37d406f8fcda84a10f8c08b/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c5e0ffb3b37d406f8fcda84a10f8c08b/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c5e0ffb3b37d406f8fcda84a10f8c08b/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c5e0ffb3b37d406f8fcda84a10f8c08b/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c876d431d1af48a68f908d275c439334/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c876d431d1af48a68f908d275c439334/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/c876d431d1af48a68f908d275c439334/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/de9353b563be4f19870d0f7fb503627d/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/de9353b563be4f19870d0f7fb503627d/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/de9353b563be4f19870d0f7fb503627d/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/de9353b563be4f19870d0f7fb503627d/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/de9353b563be4f19870d0f7fb503627d/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/e69a3afc3a5a4213a8290422f87abb4f/artifacts/model/MLmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/e69a3afc3a5a4213a8290422f87abb4f/artifacts/model/conda.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/e69a3afc3a5a4213a8290422f87abb4f/artifacts/model/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/e69a3afc3a5a4213a8290422f87abb4f/artifacts/model/python_env.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/1/e69a3afc3a5a4213a8290422f87abb4f/artifacts/model/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/green_tripdata_2021-01.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/green_tripdata_2021-02.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/web-service/mlflow.db" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/web-service/mlflow.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -490,7 +380,7 @@
       <workItem from="1688756866198" duration="28567000" />
       <workItem from="1689048139629" duration="535000" />
       <workItem from="1689048679760" duration="2096000" />
-      <workItem from="1689051078782" duration="15382000" />
+      <workItem from="1689051078782" duration="17189000" />
     </task>
     <servers />
   </component>

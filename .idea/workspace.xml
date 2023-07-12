@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="894b1ad8-0fae-4cc9-aac1-2127330a0dde" name="Changes" comment="" />
+    <list default="true" id="894b1ad8-0fae-4cc9-aac1-2127330a0dde" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/green_tripdata_2021-01.parquet" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/green_tripdata_2021-02.parquet" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -378,7 +382,7 @@
       <workItem from="1688756866198" duration="28567000" />
       <workItem from="1689048139629" duration="535000" />
       <workItem from="1689048679760" duration="2096000" />
-      <workItem from="1689051078782" duration="17914000" />
+      <workItem from="1689051078782" duration="18424000" />
     </task>
     <servers />
   </component>

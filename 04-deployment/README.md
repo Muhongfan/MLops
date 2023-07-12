@@ -15,7 +15,6 @@ There are 2 types/paradigms or deployment:
     The model is always available for prediction. There are two ways to deploy an online model:
 
   - Web Service:
-
     Periodical real-time forecasting(hourly, daily, monthly) depends on the interval set.
 
     The relationship(nums) between the client (the Backend in this case) and the model is 1 to 1.

@@ -4,11 +4,10 @@ import boto3
 import base64
 import mlflow
 
-
 kinesis_client = boto3.client('kinesis')
-
+RUN_ID = '7c8bb75fadea44aa9337ec3de35c430e'
 PREDICTIONS_STREAM_NAME = os.getenv('PREDICTIONS_STREAM_NAME', 'ride_preditions')
-RUN_ID = os.getenv('RUN_ID')
+# RUN_ID = os.getenv('RUN_ID')
 
 logged_model = f's3://zoomcamp-mlops/1/{RUN_ID}/artifacts/model'
 model = mlflow.pyfunc.load_model(logged_model)
@@ -34,6 +33,7 @@ def predict(features):
 
 
 def lambda_handler(event, context):
+    # return {"hi": "hello"}
     predictions_events = []
 
     for record in event['Records']:
@@ -55,7 +55,7 @@ def lambda_handler(event, context):
                 'ride_id': ride_id
             }
         }
-        print(json.dumps(prediction_event))
+        # print(json.dumps(prediction_event))
 
         if not TEST_RUN:
             kinesis_client.put_record(
@@ -66,7 +66,8 @@ def lambda_handler(event, context):
         predictions_events.append(prediction_event)
 
     return {
+
         'prediction': predictions_events
 
     }
-
+    # return event

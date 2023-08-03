@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="894b1ad8-0fae-4cc9-aac1-2127330a0dde" name="Changes" comment="" />
+    <list default="true" id="894b1ad8-0fae-4cc9-aac1-2127330a0dde" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/base64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/docker_auths.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/ecr_create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/json.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/new_func.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/putre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/remote_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/images/test_docker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/streaming/fk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-deployment/streaming/test_docker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/streaming/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/streaming/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/streaming/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/streaming/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/streaming/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/streaming/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/streaming/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/streaming/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/streaming/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/streaming/lambda_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/web-service-mlflow/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/web-service-mlflow/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/web-service-mlflow/Pipfile.lock" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -43,29 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/amberm/PycharmProjects/MLops/04-deployment/web-service-mlflow/imgs&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/amberm/PycharmProjects/MLops/04-deployment/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/04-deployment/images" />
+      <recent name="$PROJECT_DIR$/04-deployment/streaming" />
       <recent name="$PROJECT_DIR$/04-deployment/web-service-mlflow/imgs" />
       <recent name="$PROJECT_DIR$/04-deployment/web-service-mlflow" />
       <recent name="$PROJECT_DIR$/04-deployment/web-service-mlflow/model" />
-      <recent name="$PROJECT_DIR$/02-experiment-tracking/data" />
-      <recent name="$PROJECT_DIR$/04-deployment/web-wervice" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/04-deployment/web-service-mlflow/imgs" />
@@ -75,7 +94,7 @@
       <recent name="$PROJECT_DIR$/mlops-zoomcamp/02-experiment-tracking" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="MLops" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,6 +164,52 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03-orchestration/3.5/create_s3_bucket_block.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fk" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MLcamp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="SDK_NAME" value="$USER_HOME$/anaconda3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04-deployment/streaming" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04-deployment/streaming/fk.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="lambda_function" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MLcamp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="SDK_NAME" value="$USER_HOME$/anaconda3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04-deployment/streaming" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04-deployment/streaming/lambda_function.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,6 +301,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04-deployment/web-service-mlflow/predict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_docker" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MLcamp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="SDK_NAME" value="$USER_HOME$/anaconda3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04-deployment/streaming" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04-deployment/streaming/test_docker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -380,6 +468,8 @@
       <workItem from="1689048679760" duration="2096000" />
       <workItem from="1689051078782" duration="18424000" />
       <workItem from="1689129262498" duration="1351000" />
+      <workItem from="1689298598182" duration="72731000" />
+      <workItem from="1690032708159" duration="21771000" />
     </task>
     <servers />
   </component>
@@ -402,15 +492,28 @@
           <line>21</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04-deployment/streaming/test_docker.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/04-deployment/streaming/fk.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MLops$orchestrate_s3.coverage" NAME="orchestrate_s3 Coverage Results" MODIFIED="1688082261167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03-orchestration/3.5" />
+    <SUITE FILE_PATH="coverage/MLops$test_docker.coverage" NAME="test_docker Coverage Results" MODIFIED="1690034356358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04-deployment/streaming" />
     <SUITE FILE_PATH="coverage/MLcamp$main.coverage" NAME="main Coverage Results" MODIFIED="1685370209942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MLops$file_store.coverage" NAME="file_store Coverage Results" MODIFIED="1689083945064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/anaconda3/lib/python3.10/site-packages/mlflow/store/tracking" />
     <SUITE FILE_PATH="coverage/MLops$predict.coverage" NAME="predict Coverage Results" MODIFIED="1689087277333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04-deployment/web-service-mlflow" />
+    <SUITE FILE_PATH="coverage/MLops$fk.coverage" NAME="fk Coverage Results" MODIFIED="1689656934216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04-deployment/streaming" />
     <SUITE FILE_PATH="coverage/MLops$core.coverage" NAME="core Coverage Results" MODIFIED="1687551448214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/anaconda3/lib/python3.10/site-packages/xgboost" />
+    <SUITE FILE_PATH="coverage/MLops$lambda_function.coverage" NAME="lambda_function Coverage Results" MODIFIED="1689634374566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04-deployment/streaming" />
     <SUITE FILE_PATH="coverage/MLops$orchestrate_pre_prefect.coverage" NAME="orchestrate_pre_prefect Coverage Results" MODIFIED="1687551809990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MLops/03-orchestration/3.3" />
   </component>
 </project>

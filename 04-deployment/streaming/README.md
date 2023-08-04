@@ -115,13 +115,6 @@ Go to AWS IAM and create a role.
 
 
 
-
-
-
-
-
-
-
    ### Note: 
    if the response is "Invalid base64: xxxx", add `--cli-binary-format raw-in-base64-out
 \` and resend it again.
@@ -386,7 +379,7 @@ docker push ${REMOTE_IMAGE}
 
 ![remote_image.png](..%2Fimages%2Fremote_image.png)
 
-# STEP 10  
+# STEP 10  model from docker image
 1. Create a new Lambda function, which is from the `container image` , the container name is `ride-duration-predition`, and `Container image URI` is `REMOTE_URI` we obtained in the last step. 
 Select the existing role created before.
 
@@ -394,7 +387,32 @@ Select the existing role created before.
 
 2. Then go to `Lambda > Configuration > Environment variables`, create `Key - value` for `PREDICTIONS_STREAM_NAME` and `RUN_ID`
 3. Add Kinesis stream created before as trigger for new lambda function. Also delete the previous Lambda function which also used this Kinesis stream. 
-4. Sent a new record to the trigger kinesis stream.
+4. Creat policy to IAM-rule for s3.
+5. Run a test on Lambda with the test data as that in Step5.2
+```
+{
+  "Records": [
+    {
+      "kinesis": {
+        "kinesisSchemaVersion": "1.0",
+        "partitionKey": "1",
+        "sequenceNumber": "49642651173544153298181181325149235718214587400895594498",
+        "data": "ewogICAgICAgICJyaWRlIjogewogICAgICAgICAgICAiUFVMb2NhdGlvbklEIjogMTMwLAogICAgICAgICAgICAiRE9Mb2NhdGlvbklEIjogMjA1LAogICAgICAgICAgICAidHJpcF9kaXN0YW5jZSI6IDMuNjYKICAgICAgICB9LCAKICAgICAgICAicmlkZV9pZCI6IDE1NgogICAgfQ==",
+        "approximateArrivalTimestamp": 1689437986.135
+      },
+      "eventSource": "aws:kinesis",
+      "eventVersion": "1.0",
+      "eventID": "shardId-000000000000:49642651173544153298181181325149235718214587400895594498",
+      "eventName": "aws:kinesis:record",
+      "invokeIdentityArn": "arn:aws:iam::135673905301:role/lambda-kinesis-role",
+      "awsRegion": "ca-central-1",
+      "eventSourceARN": "arn:aws:kinesis:ca-central-1:135673905301:stream/ride-events"
+    }
+  ]
+}
+```
+
+6. Sent a new record to the trigger kinesis stream.
    ```
    KINESIS_STREAM_INPUT=ride-events \ 
    aws kinesis put-record \
@@ -410,7 +428,7 @@ Select the existing role created before.
            "ride_id": 156
        }'
    ```      
-5. Ask for the output stream.
+6. Ask for the output stream.
 
 ```
 KINESIS_STREAM_OUTPUT='ride_preditions'                    
@@ -497,3 +515,23 @@ echo ${RESULT} | jq -r '.Records[0].Data' | base64 --decode
    when put a new record to the trigger kinesis stream in Step 9.
 
     **ANS**: Change to add `--cli-binary-format raw-in-base64-out \` in the shell code
+
+5. `An error occurred (ResourceNotFoundException) when calling the GetShardIterator operation: Shard shardId-000000000000 in stream ride_predictions under account 135673905301 does not exist`
+
+   **ANS**: 
+
+   - Verify the Kinesis Data Stream Name: Double-check that the stream name specified in the Lambda function is correct. Ensure that there are no typos or spelling errors in the stream name.
+
+   - Check Kinesis Data Stream Existence: Confirm that the Kinesis data stream "ride_predictions" exists under the AWS account with the ID "135673905301." You can do this by logging in to the AWS Management Console, navigating to the Kinesis service, and checking the list of streams for the specified AWS account.
+
+   - Verify the Shard ID: If you are manually specifying the shard ID in your Lambda function, ensure that you are using the correct shard ID for the "ride_predictions" stream. Shard IDs are unique identifiers for individual shards in a Kinesis data stream.
+
+   - Check Lambda Function Permissions: Ensure that the Lambda function has the necessary permissions to interact with the Kinesis data stream. The Lambda function's execution role should have appropriate permissions (e.g., kinesis:DescribeStream, kinesis:GetShardIterator) to interact with the specified Kinesis stream.
+
+   - Check AWS Region: Make sure that both the Lambda function and the Kinesis data stream are in the same AWS region. Cross-region operations might not be allowed if not explicitly configured.
+
+   - Confirm the Code Logic: Review the Lambda function's code to ensure that the GetShardIterator operation is being called correctly. Double-check that there are no logical errors causing the issue.
+
+   - Look for Recent Changes: If the error started occurring after a recent update or deployment, consider rolling back changes to isolate the cause.
+
+   - CloudWatch Logs: Enable logging for the Lambda function and check the CloudWatch logs to get more details about the error. This might provide additional insights into the issue.

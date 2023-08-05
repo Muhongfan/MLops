@@ -11,36 +11,21 @@ Module 1: Introduction
 Module 2: Experiment tracking and model management
 * Why MLops
 * Experiment tracking intro
-* Getting started with MLflow 
 * Experiment tracking with MLflow
-  * Basic info login into MLflow 
-    Example: [basic_mlflow.ipynb](02-experiment-tracking%2Fbasic_mlflow.ipynb)
-  * Complicated info login into MLflow : 
-    * Adding hyperparameter tuning into notebook using hyperopt 
-    * Exploring results
-    * How to select best model
-    Example: [xgboost.ipynb](02-experiment-tracking%2Fxgboost.ipynb) &
-             [ensemble.ipynb](02-experiment-tracking%2Fensemble.ipynb)
-* Model management 
-  * Save model
-    
-    * `with open("models/preprocessor.b", "wb") as f_out:
-          pickle.dump(dv, f_out)`
-
-  * Load model(2 ways): 
-    * Load model as an artifact:
-      `mlflow.log_artifact("mymodel", artifact_path = "models/")`
-
-    * Log model using the method `log_model`:
-      `mlflow.<framework>.log_model(model, artifact_path = "models/")`
-
+* Model management
 * Model registry
-  * register models
-  * transfering models different stages
-  * How to select the best model based on the performance
-  * How to test on the valid dataset
-  
-  Example: [model-registry.ipynb](02-experiment-tracking%2Fmodel-registry.ipynb)
 * MLflow in practice
 * MLflow: benefits, limitations and alternatives
 
+Module 3: Orchestration and ML Pipelines
+* Workflow orchestration
+* Turning a notebook into a pipeline
+* Deployment of Prefect flow
+
+Module 4: Model Deployment
+* Batch vs online
+* For online: web services vs streaming
+* Serving models in Batch mode
+* Web services (mlflow + s3)
+* Streaming (Kinesis/SQS + AWS Lambda + mlflow + s3)
+* Batch

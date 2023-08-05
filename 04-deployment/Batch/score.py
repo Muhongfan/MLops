@@ -11,6 +11,7 @@ import sys
 import pandas as pd
 
 import mlflow
+from prefect import task, flow
 
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.ensemble import RandomForestRegressor
@@ -109,6 +110,22 @@ def apply_model(input_file, run_id, output_file):
 
 
 # apply_model(input_file=input_file, run_id=RUN_ID, output_file=output_file)
+@flow
+def ride_duration_prediction(
+        taxi_type: str,
+        run_id: str,
+        run_date: datetime = None):
+    if run_date is None:
+        ctx = get_run_context()
+        run_date = ctx.flow_run.expected_start_time
+
+    input_file, output_file = get_paths(run_date, taxi_type, run_id)
+
+    apply_model(
+        input_file=input_file,
+        run_id=run_id,
+        output_file=output_file
+    )
 
 
 def run():

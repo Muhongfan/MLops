@@ -52,7 +52,7 @@ report = Report(metrics = [
     DatasetMissingValuesMetric()
 ])
 
-
+@task
 def prep_db():
 	with psycopg.connect("host=localhost port=5432 user=postgres password=example", autocommit=True) as conn:
 		res = conn.execute("SELECT 1 FROM pg_database WHERE datname='test'")
@@ -61,7 +61,7 @@ def prep_db():
 		with psycopg.connect("host=localhost port=5432 dbname=test user=postgres password=example") as conn:
 			conn.execute(create_table_statement)
 
-
+@task
 def calculate_metrics_postgresql(curr, i):
 	current_data = raw_data[(raw_data.lpep_pickup_datetime >= (begin + datetime.timedelta(i))) &
 		(raw_data.lpep_pickup_datetime < (begin + datetime.timedelta(i + 1)))]
@@ -78,13 +78,15 @@ def calculate_metrics_postgresql(curr, i):
 	num_drifted_columns = result['metrics'][1]['result']['number_of_drifted_columns']
 	share_missing_values = result['metrics'][2]['result']['current']['share_of_missing_values']
 
+
 	curr.execute(
 		"insert into dummy_metrics(timestamp, prediction_drift, num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
 		(begin + datetime.timedelta(i), prediction_drift, num_drifted_columns, share_missing_values)
 	)
 
+@flow
 
-def main():
+def batch_monitoring_backfill():
 	prep_db()
 	last_send = datetime.datetime.now() - datetime.timedelta(seconds=10)
 	with psycopg.connect("host=localhost port=5432 dbname=test user=postgres password=example", autocommit=True) as conn:
@@ -101,4 +103,4 @@ def main():
 			logging.info("data sent")
 
 if __name__ == '__main__':
-	main()
+	batch_monitoring_backfill()

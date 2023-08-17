@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="894b1ad8-0fae-4cc9-aac1-2127330a0dde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/04-deployment/Batch/Pipfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-deployment/Batch/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-deployment/Batch/score.py" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/Batch/score.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05-monitoring/taxi_monitoring/debugging_nyc_taxi_data.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-intro/duration-prediction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/01-intro/duration-prediction.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-deployment/Batch/REAMME.md" beforeDir="false" afterPath="$PROJECT_DIR$/04-deployment/Batch/REAMME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05-monitoring/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/05-monitoring/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,36 +53,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/amberm/PycharmProjects/MLops/04-deployment/Batch&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/amberm/PycharmProjects/MLops/05-monitoring/taxi_monitoring",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/04-deployment/Batch" />
+      <recent name="$PROJECT_DIR$/05-monitoring/taxi_monitoring" />
+      <recent name="$PROJECT_DIR$/05-monitoring/img" />
       <recent name="$PROJECT_DIR$/04-deployment/images" />
+      <recent name="$PROJECT_DIR$/04-deployment/Batch" />
       <recent name="$PROJECT_DIR$/04-deployment/streaming" />
-      <recent name="$PROJECT_DIR$/04-deployment/web-service-mlflow/imgs" />
-      <recent name="$PROJECT_DIR$/04-deployment/web-service-mlflow" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/05-monitoring/taxi_monitoring" />
+      <recent name="$PROJECT_DIR$/05-monitoring/taxi_monitoring/config" />
+      <recent name="$PROJECT_DIR$/02-experiment-tracking" />
       <recent name="$PROJECT_DIR$/04-deployment/web-service-mlflow/imgs" />
       <recent name="$PROJECT_DIR$/mlops-zoomcamp/02-experiment-tracking/images" />
-      <recent name="$PROJECT_DIR$/mlops-zoomcamp/02-experiment-tracking/xgboost" />
-      <recent name="$PROJECT_DIR$/mlops-zoomcamp/01-intro" />
-      <recent name="$PROJECT_DIR$/mlops-zoomcamp/02-experiment-tracking" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test_docker">
@@ -456,6 +462,17 @@
       <workItem from="1689298598182" duration="72731000" />
       <workItem from="1690032708159" duration="21771000" />
       <workItem from="1691002892224" duration="29838000" />
+      <workItem from="1691234538426" duration="8630000" />
+      <workItem from="1691333437774" duration="19355000" />
+      <workItem from="1691701513458" duration="33991000" />
+      <workItem from="1691855052969" duration="2791000" />
+      <workItem from="1691858152962" duration="989000" />
+      <workItem from="1691859146878" duration="1837000" />
+      <workItem from="1691861025016" duration="1630000" />
+      <workItem from="1691867090955" duration="1524000" />
+      <workItem from="1691868703486" duration="912000" />
+      <workItem from="1691869623218" duration="861000" />
+      <workItem from="1691870488201" duration="29181000" />
     </task>
     <servers />
   </component>
@@ -488,12 +505,27 @@
           <line>12</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/05-monitoring/taxi_monitoring/evidently_metrics_calculation.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/amberm/PycharmProjects/MLops/05-monitoring/taxi_monitoring/baseline_model_nyc_taxi_data.ipynb</url>
+          <line>33</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/amberm/PycharmProjects/MLops/05-monitoring/taxi_monitoring/baseline_model_nyc_taxi_data.ipynb</url>
+          <line>28</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MLops$orchestrate_s3.coverage" NAME="orchestrate_s3 Coverage Results" MODIFIED="1688082261167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03-orchestration/3.5" />
-    <SUITE FILE_PATH="coverage/MLops$test_docker.coverage" NAME="test_docker Coverage Results" MODIFIED="1691061439648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04-deployment/streaming" />
+    <SUITE FILE_PATH="coverage/MLops$test_docker.coverage" NAME="test_docker Coverage Results" MODIFIED="1691692090383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04-deployment/streaming" />
     <SUITE FILE_PATH="coverage/MLcamp$main.coverage" NAME="main Coverage Results" MODIFIED="1685370209942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MLops$file_store.coverage" NAME="file_store Coverage Results" MODIFIED="1689083945064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/anaconda3/lib/python3.10/site-packages/mlflow/store/tracking" />
     <SUITE FILE_PATH="coverage/MLops$predict.coverage" NAME="predict Coverage Results" MODIFIED="1689087277333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04-deployment/web-service-mlflow" />

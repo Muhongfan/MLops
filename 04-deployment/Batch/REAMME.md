@@ -23,10 +23,11 @@ Choose a name for this storage configuration: local_tmp
 ```
 **Step 3**: deploy prefect with `prefect deployment create score_deploy.py` and go to prefect UI to check if it works.
 **Step 4**: Create work queue on prefect UI with name as `ride_duration_queue` and obtained `Work Queue ID`.
-**Step 5**: Data fetch from remote
-1. Create `score_backfil.py` [score_backfil.py](score_backfil.py)
-2. Run `python score_backfil.py `
-**Step 6**: Start agent with `prefect agent start 55fc5cc0-d414-45ee-9d30-7bd5e70e8d0a' to look for work from queue 
+### Apply model to previous months: Backfilling
+### Note: Fill and pull the date data from AWS
+**Step 1**: Create `score_backfil.py` [score_backfil.py](score_backfil.py)
+**Step 2**:Run `python score_backfil.py ` to 
+**Step 3**: Start agent with `prefect agent start 55fc5cc0-d414-45ee-9d30-7bd5e70e8d0a' which is looking for work from the provided queue.
 
 
 
@@ -49,5 +50,6 @@ rm ~/.prefect/orion.db
 pipenv shell        
 prefect orion database reset -y 
 prefect orion start  
+
 ```
 

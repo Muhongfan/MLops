@@ -296,7 +296,7 @@ echo $RESULT
 
 ```
 
-### STEP 7: Add model to Lambda
+### STEP 7: load model to Lambda
 1. Create `lambda_function.py` under streaming folder in local environment, then copy the code in Lambda to this python file.
 2. Copy the code which is below in `predict-pipline-se.py` to `lambda_function.py`
 ```

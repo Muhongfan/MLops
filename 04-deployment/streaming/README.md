@@ -193,9 +193,11 @@ def lambda_handler(event, context):
 
 
 Since we do not have client architecture and can not send the response to clients directly, it is better to send the response to another stream.
+
 2. Create another data stream.
 
 Name a Kinesis stream as `ride_predictions` the same as STEP 3
+
 3. Script of sending outputs to another stream.
 ```
 import json
@@ -262,6 +264,7 @@ def lambda_handler(event, context):
 Due to `An error occurred (AccessDeniedException) when calling the PutRecord operation: xxxx`, create a Policy for Kinesis of `PutRecord`.
 Go to IAM Role, and find the role-`lambda-kinesis-role` we created in previous step. Click on `Add Policy > Create inline Policy`. Under `Select a service`, find and click `Kinesis`. Uner `Access level`, choose `write > PutRecord & PutRecords`.
 Add your new Kinesis stream ARN `arn:aws:kinesis:::stream/ride_predictions`. Finally, `Next`. Name your policy as `lambda-kinesis-write-to-ride-predictions`. After create it, add it to your Permissions policies.
+
 5. Run for the result
 
 ![OutputStream.png](..%2Fimages%2FOutputStream.png)
@@ -298,7 +301,8 @@ echo $RESULT
 
 ### STEP 7: load model to Lambda
 1. Create `lambda_function.py` under streaming folder in local environment, then copy the code in Lambda to this python file.
-2. Copy the code which is below in `predict-pipline-se.py` to `lambda_function.py`
+2. 
+3. Copy the code which is below in `predict-pipline-se.py` to `lambda_function.py`
 ```
 import mlflow 
 
@@ -328,6 +332,7 @@ python test.py
 pipenv install boto3 mlflow scikit-learn --python=3.9
 ```
 [Run Amazon Lambda Locally with Docker](https://www.srvrlss.io/blog/Amazon-Lambda-docker/)
+
 2. Create a docker file
    - Go to [Amazon ECR Public Gallery](https://gallery.ecr.aws/) and find `Lambda/Python > Image Tags > 3.9`. Copy address.
    - Write down the [Dockerfile](Dockerfile)
@@ -357,14 +362,17 @@ pipenv install boto3 mlflow scikit-learn --python=3.9
 
 ### STEP 9: Push image to AWS ECR
 AWS ECR: Fully-managed Docker container registry 
+
 1. Create a new AWS repo 
 ```shell 
 aws ecr create-repository --repository-name duration-model
 ```
+
 2. Login to ECR
 ```shell
 $(aws ecr get-login --no-include-email)
 ```
+
 3. Push the docker image to ECR.
 ```shell
 REMOTE_URI="135673905301.dkr.ecr.ca-central-1.amazonaws.com/duration-model"
@@ -375,6 +383,7 @@ LOCAL_IMAGE="stream-model-duration:v1"
 docker tag ${LOCAL_IMAGE} ${REMOTE_IMAGE}
 docker push ${REMOTE_IMAGE}
 ```
+
 4. Sucessfully uploaded. And check the image `echo $REMOTE_IMAGE`
 
 ![remote_image.png](..%2Fimages%2Fremote_image.png)
@@ -386,8 +395,11 @@ Select the existing role created before.
 ![new_func.png](..%2Fimages%2Fnew_func.png)
 
 2. Then go to `Lambda > Configuration > Environment variables`, create `Key - value` for `PREDICTIONS_STREAM_NAME` and `RUN_ID`
-3. Add Kinesis stream created before as trigger for new lambda function. Also delete the previous Lambda function which also used this Kinesis stream. 
+   
+3. Add Kinesis stream created before as trigger for new lambda function. Also delete the previous Lambda function which also used this Kinesis stream.
+   
 4. Creat policy to IAM-rule for s3.
+   
 5. Run a test on Lambda with the test data as that in Step5.2
 ```
 {
@@ -427,8 +439,9 @@ Select the existing role created before.
            }, 
            "ride_id": 156
        }'
-   ```      
-6. Ask for the output stream.
+   ```
+     
+7. Ask for the output stream.
 
 ```
 KINESIS_STREAM_OUTPUT='ride_preditions'                    
@@ -445,7 +458,8 @@ SHARD_ITERATOR=$(aws kinesis \
 RESULT=$(aws kinesis get-records --shard-iterator $SHARD_ITERATOR)
 echo ${RESULT} | jq -r '.Records[0].Data' | base64 --decode
 ```
-6. Successful results are the same as Step 4.3/9.3
+
+8. Successful results are the same as Step 4.3/9.3
 
  
 

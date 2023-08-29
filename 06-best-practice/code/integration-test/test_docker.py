@@ -1,11 +1,11 @@
 # pylint: disable=duplicate-code
+import sys
 import json
 import logging
-import sys
-import requests
-import lambda_function
 
 from deepdiff import DeepDiff
+
+import lambda_function
 
 logging.getLogger("mlflow").setLevel(logging.DEBUG)
 
@@ -40,8 +40,6 @@ expected_response = {
 }
 diff = DeepDiff(actual_response, expected_response, significant_digits=1)
 print(f'diff={diff}')
-# diff={'values_changed': {"root['predictions'][0]['prediction']['ride_duration']": {'new_value': 18.1, 'old_value': 18.168945726405326}}}
-
 assert 'type_changes' not in diff
 assert 'values_changed' not in diff
 # diff={}

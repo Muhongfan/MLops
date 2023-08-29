@@ -1,11 +1,10 @@
 # assert 1 == 1
-from pathlib import Path
 import os
 import sys
+from pathlib import Path
+import model
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-import model
 
 
 def read_text(file):
@@ -56,23 +55,6 @@ def test_predict():
     assert actual_prediction == expected_prediction
 
 
-# Add the decode test
-def test_base64_decode():
-    base64_input = "ewogICAgICAgICJyaWRlIjogewogICAgICAgICAgICAiUFVMb2NhdGlvbklEIjogMTMwLAogICAgICAgICAgICAiRE9Mb2NhdGlvbklEIjogMjA1LAogICAgICAgICAgICAidHJpcF9kaXN0YW5jZSI6IDMuNjYKICAgICAgICB9LCAKICAgICAgICAicmlkZV9pZCI6IDE1NgogICAgfQ=="
-    # base64_input = read_text('data.b64')
-
-    actual_result = model.base64_decode(base64_input)
-    expected_result = {
-        "ride": {
-            "PULocationID": 130,
-            "DOLocationID": 205,
-            "trip_distance": 3.66,
-        },
-        "ride_id": 156,
-    }
-
-    assert actual_result == expected_result
-
 
 # Add the model test
 def test_prepare_features():
@@ -93,14 +75,13 @@ def test_lambda_handler():
     model_version = 'Test123'
     model_service = model.ModelService(model_mock, model_version)
 
-    # base64_input = read_text('data.b64')
+    base64_input = read_text('data.b64')
 
     event = {
         "Records": [
             {
                 "kinesis": {
-                    # "data": base64_input,
-                    "data": "ewogICAgICAgICJyaWRlIjogewogICAgICAgICAgICAiUFVMb2NhdGlvbklEIjogMTMwLAogICAgICAgICAgICAiRE9Mb2NhdGlvbklEIjogMjA1LAogICAgICAgICAgICAidHJpcF9kaXN0YW5jZSI6IDMuNjYKICAgICAgICB9LCAKICAgICAgICAicmlkZV9pZCI6IDE1NgogICAgfQ==",
+                    "data": base64_input,
                 },
             }
         ]

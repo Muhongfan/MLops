@@ -6,9 +6,18 @@ name = "pypi"
 [packages]
 boto3 = "*"
 mlflow = "*"
-scikit-learn = "==1.0.2"
+scikit-learn = "==1.2.2"
+setuptools = "*"
+wheel = "*"
+pipfile = "*"
 
 [dev-packages]
+pytest = "*"
+deepdiff = "*"
+pylint = "*"
+black = "*"
+isort = "*"
+pre-commit = "*"
 
 [requires]
 python_version = "3.10"

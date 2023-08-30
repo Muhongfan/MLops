@@ -2,6 +2,7 @@
 import os
 import sys
 from pathlib import Path
+
 import model
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -55,7 +56,6 @@ def test_predict():
     assert actual_prediction == expected_prediction
 
 
-
 # Add the model test
 def test_prepare_features():
     model_service = model.ModelService(None)
@@ -95,7 +95,7 @@ def test_lambda_handler():
                 'version': model_version,
                 'prediction': {
                     'ride_duration': 10.0,
-                    'ride_id': 156,
+                    'ride_id': 256,
                 },
             }
         ]

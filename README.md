@@ -1,13 +1,20 @@
 Free MLOps course run by DataTalksClub. The program comprises seven modules followed by a capstone project as mentioned below and spans across several months.
 
-Skills involve: AWS Kinesis, EC2, S3, LAMBDA, Prefect, Mlflow, PostgreSQL, Docker, Docker-compose, Grafana
+Skills involve: AWS Kinesis, EC2, S3, LAMBDA, Prefect, Mlflow, PostgreSQL, Docker, Docker-compose, Grafana; Automation Test (Unit test/Integration test/Cloud service with localstack), Code quality check (pylint, black, isort,) 
+
 Module 1: Introduction
 * [What is MLOps](https://www.youtube.com/watch?v=s0uaFZSzwfI&list=PL3MmuxUbc_hIUISrluw_A7wDSmfOhErJK)
-* Environment preparation
 * Connect remote through Pycharm
 * Edit remote jupyter notebook on your localhost
 * Running example: training a ride duration prediction model
 * Maturity models
+
+
+[x] Environment preparation (Anaconda, Docker, Docker Compose)
+
+[x] Connect remote through Pycharm
+
+----------
 
 Module 2: Experiment tracking and model management
 * Why MLops
@@ -18,37 +25,58 @@ Module 2: Experiment tracking and model management
 * MLflow in practice
 * MLflow: benefits, limitations and alternatives
 
+[x] Experiment tracking (MLflow)
+
+----------
+
 Module 3: Orchestration and ML Pipelines
 *Add workflow chart*
 * Workflow orchestration
 * Turning a notebook into a pipeline
 * Deployment of Prefect flow
+
+
+[x] Orchestration pipeline (Prefect)
+
+----------
+
 Module 4: Model Deployment
 *Add kinesis stream chart*
 * Batch vs online
 * For online: web services vs streaming
 * Serving models in Batch mode
-* Web services (mlflow + s3)
-* Streaming (Kinesis/SQS + AWS Lambda + mlflow + s3)
+* Web services (Flask + MLflow + AWS s3)
+* Streaming (PostgreSQL + AWS Lambda/Kinesis/s3)
 * Batch
 
+
+[x] Service (Flask + MLflow + PostgreSQL + AWS Lambda/Kinesis/s3/EC2)
+
+----------
 Module 5: Model Monitoring
 
 * Intro to Model Monitoring, ML-based services, such as building batch monitoring, monitoring Scheme
-* Monitoring web services with Prometheus, Evidently, and Grafana
-* Monitoring batch jobs with Prefect, MongoDB, and Evidently
+* Monitoring batch jobs with Prefect, PostgreSQL, Evidently, and Grafana
 
-Batch Monitoring
-Building a Monitoring Scheme
-Environment Setup
-Docker Compose
-Baseline Data and Model
-Dummy Monitoring
-Data Quality
-Save Dashboard
-Debugging with test suites and reports
+<!--* Monitoring web services with Prometheus, Evidently, and Grafana-->
 
-Differences:
-Docker & Docker-compose
-Kafka & AWS Kinesis
+[x] Monitoring (Prefect, PostgreSQL, Evidently, Grafana and Docker)
+
+----------
+
+Module 6: Best Practices
+* Testing: unit, integration
+* Python: linting and formatting
+* Pre-commit hooks and makefiles
+* CI/CD (GitHub Actions)
+* Infrastructure as code (Terraform)
+
+[x] Test (unit test, integration test with python, docker-compose; and cloud service test with LocalStack)
+[x] code quality (pylint, git pre-commit, Makefile, AWS S3)
+
+----------
+
+### Differences:
+- Docker & Docker-compose
+- Kafka & AWS Kinesis
 

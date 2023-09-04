@@ -1,5 +1,5 @@
 
-### MLFLOW
+## MLFLOW
 1. **Can't connect to ('127.0.0.1', 5000) Running the mlflow server failed. Please see the logs above for details.**
 
     ***ANS:*** `ps aux | grep gunicorn` and then manually `kill [PID]`
@@ -17,7 +17,7 @@ You can restore the experiment, or permanently delete the experiment to create a
 
     ***ANS:*** `kill -9 $(lsof -i:5000 -t) 2> /dev/null` kill the task that is using port 5000
 
-### Git
+## Git
 1. `(modified content, untracked content)`
     
     ***ANS:*** Jump to the target folder,  `rm -rf .git*`
@@ -128,6 +128,71 @@ x--x--C1--C2--C3 (B)
     1). Root folder, run `git rev-list --all | xargs -rL1 git ls-tree -r --long | sort -uk3 | sort -rnk4 | head -10`
     2). Edit commit `git filter-branch --tree-filter "rm -f {filepath}" -- --all`
     3). Force to push it to remote `git push -f --all`
+
+
+
+## Python 
+Parent_dir
+|
+├──c1_dir
+|   |
+|   └── a.py
+|
+├──test.py
+|   
+| 
+└──c2_dir
+    |
+    ├── b.py
+    └── c.py
+
+case1 : Call the file of the parent directory; such as calling the test.py file in the a.py file. You need to add the following code at the head of the file, and then you can use the functions in the test file in the a.py file.
+```
+   import sys
+    sys.path.append("..")
+    import  test
+```
+
+case2 : Call the simple file of c2_dir in the subfolder; for example, test.py calls b.py, and b.py does not call other files in its same level directory; first add an empty "__init__.py" under the folder file, and then you can call the file directly, so that you can use the b.py function in the test.py file.
+```
+from c2_dir import b
+
+```
+
+case3 : Call the files under the subfolder c2_dir; for example, test.py calls b.py, and b.py calls c.py file;
+    Same as case2, first add an empty "__init__.py" file, and then in the b.py file as follows:
+```
+import sys
+sys.path.append("..")
+import c2_dir.c as c
+
+```
+under test.py, apply `from c2_dir import b` to avoid when `b.py` used in `test.py` but got error because evoke `c.py` (error `ModuleNotFoundError: No module named 'c'`)
+
+case4: call a and b from the parent directory test.py
+
+```
+from test1.a import showdata
+from test1.a import plus
+from test2.b import  show
+
+showdata()
+show()
+plus()
+```
+
+case5: If c.py wants to call a in another folder, you need to add sys.path.apend(“..”)
+
+```
+c.py
+import sys
+sys.path.append("..")
+from c1_dir import a as t
+
+t.showdata()
+```
+
+
 
 ----------------
 ## 01/02
@@ -351,3 +416,5 @@ Download `models` from S3 to `./model` folder: `aws s3 cp --recursive s3://zoomc
 11. Pre-commit fails to install with error `An unexpected error has occurred: CalledProcessError: command: ('/Users/amberm/.cache/pre-commit/reposbydn2wf/py_env-python3/bin/python', '-mpip', 'install', '.')
 return code: 1 .......`
     ***ANS***: Check the version of the hooks for installation. (I upgraded isort to 5.12.0 while the demo was 5.10.1)
+
+

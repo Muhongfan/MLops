@@ -46,4 +46,5 @@ There are 2 types/paradigms or deployment:
    - Web service: 
      * [Web service](https://github.com/Muhongfan/MLops/blob/main/04-deployment/web-service/README.md)
      * [web-service-mlflow](https://github.com/Muhongfan/MLops/blob/main/04-deployment/web-service-mlflow/README.md)
-   - Streaming
+   - Streaming:
+     * [Streaming](https://github.com/Muhongfan/MLops/blob/main/04-deployment/streaming/README.md)

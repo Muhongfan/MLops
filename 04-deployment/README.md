@@ -40,3 +40,10 @@ There are 2 types/paradigms or deployment:
 
     ![mul-stream.png](images%2Fmul-stream.png)
 
+## Notes:
+1. Offline: [Batch](https://github.com/Muhongfan/MLops/blob/main/04-deployment/Batch/REAMME.md)
+2. Online:
+   - Web service: 
+     * [Web service](https://github.com/Muhongfan/MLops/blob/main/04-deployment/web-service/README.md)
+     * [web-service-mlflow](https://github.com/Muhongfan/MLops/blob/main/04-deployment/web-service-mlflow/README.md)
+   - Streaming

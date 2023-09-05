@@ -1,4 +1,4 @@
-# 4.Deployment
+# 4. Web Service
 
 1. Create the folder "web-service"
 2. Copy the `lin_reg.bin` file from the previous project

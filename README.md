@@ -4,41 +4,30 @@ Skills involve: AWS Kinesis, EC2, S3, LAMBDA, Prefect, Mlflow, PostgreSQL, Docke
 
 Module 1: Introduction
 * [What is MLOps](https://www.youtube.com/watch?v=s0uaFZSzwfI&list=PL3MmuxUbc_hIUISrluw_A7wDSmfOhErJK)
-* Connect remote through Pycharm
-* Edit remote jupyter notebook on your localhost
+* Connect remote environment through Pycharm
+* Edit remote jupyter notebook on the localhost
 * Running example: training a ride duration prediction model
+* Environment preparation (Anaconda, Docker, Docker Compose)
 * Maturity models
 
-
-[x] Environment preparation (Anaconda, Docker, Docker Compose)
-
-[x] Connect remote through Pycharm
-
-----------
 
 Module 2: Experiment tracking and model management
 * Why MLops
 * Experiment tracking intro
 * Experiment tracking with MLflow
-* Model management
+* Model management 
 * Model registry
 * MLflow in practice
 * MLflow: benefits, limitations and alternatives
 
-[x] Experiment tracking (MLflow)
-
-----------
 
 Module 3: Orchestration and ML Pipelines
 *Add workflow chart*
-* Workflow orchestration
+* Orchestration pipeline (Prefect)
 * Turning a notebook into a pipeline
 * Deployment of Prefect flow
 
 
-[x] Orchestration pipeline (Prefect)
-
-----------
 
 Module 4: Model Deployment
 *Add kinesis stream chart*
@@ -49,20 +38,13 @@ Module 4: Model Deployment
 * Streaming (PostgreSQL + AWS Lambda/Kinesis/s3)
 * Batch
 
-
-[x] Service (Flask + MLflow + PostgreSQL + AWS Lambda/Kinesis/s3/EC2)
-
-----------
 Module 5: Model Monitoring
 
 * Intro to Model Monitoring, ML-based services, such as building batch monitoring, monitoring Scheme
-* Monitoring batch jobs with Prefect, PostgreSQL, Evidently, and Grafana
+* Monitoring batch jobs with Docker, Prefect, PostgreSQL, Evidently, and Grafana
 
 <!--* Monitoring web services with Prometheus, Evidently, and Grafana-->
 
-[x] Monitoring (Prefect, PostgreSQL, Evidently, Grafana and Docker)
-
-----------
 
 Module 6: Best Practices
 * Testing: unit, integration
@@ -70,11 +52,10 @@ Module 6: Best Practices
 * Pre-commit hooks and makefiles
 * CI/CD (GitHub Actions)
 * Infrastructure as code (Terraform)
+* Automation Test (unit test, integration test with python, docker-compose; and cloud service test with LocalStack)
+* code quality (pylint, git pre-commit, Makefile, AWS S3)
 
-[x] Test (unit test, integration test with python, docker-compose; and cloud service test with LocalStack)
-[x] code quality (pylint, git pre-commit, Makefile, AWS S3)
 
-----------
 
 ### Differences:
 - Docker & Docker-compose

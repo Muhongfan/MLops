@@ -1,9 +1,7 @@
 Free MLOps course run by DataTalksClub. The program comprises seven modules followed by a capstone project as mentioned below and spans across several months.
 
 Skills involve: AWS Kinesis, EC2, S3, LAMBDA, Prefect, Mlflow, PostgreSQL, Docker, Docker-compose, Grafana; Automation Test (Unit test/Integration test/Cloud service with localstack), Code quality check (pylint, black, isort,) 
- The architecutre of MLops:
 
- ![Architecture](archtecture.001.jpeg)
 
 Module 1: Introduction
 * [What is MLOps](https://www.youtube.com/watch?v=s0uaFZSzwfI&list=PL3MmuxUbc_hIUISrluw_A7wDSmfOhErJK)
